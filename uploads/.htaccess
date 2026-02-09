@@ -1,0 +1,9 @@
+# Permitir acceso a archivos PDF e imágenes
+<FilesMatch "\.(pdf|jpg|jpeg|png)$">
+    Require all granted
+</FilesMatch>
+
+# Denegar acceso a archivos PHP por seguridad
+<FilesMatch "\.php$">
+    Require all denied
+</FilesMatch>

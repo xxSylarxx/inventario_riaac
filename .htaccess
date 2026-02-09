@@ -1,0 +1,13 @@
+# Apache Configuration - Sistema RIAAC
+
+# Versión simplificada para WAMP
+
+# Prevenir listado de directorios
+
+Options -Indexes
+
+# Proteger archivos sensibles
+
+<FilesMatch "\.(sql|md|env)$">
+Require all denied
+</FilesMatch>
