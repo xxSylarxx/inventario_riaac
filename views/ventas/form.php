@@ -362,64 +362,47 @@ include '../layouts/header.php';
                         iconColor = 'text-dark';
                     }
                     
-                   return ` <
-                div class = "list-group-item d-flex align-items-center justify-content-between" >
+                  return `
+<div class="list-group-item d-flex align-items-center justify-content-between">
 
-                <
-                div class = "d-flex align-items-center flex-grow-1" >
-                <
-                i class = "bi ${icon} ${iconColor} fs-4 me-3" > < /i>
+  <div class="d-flex align-items-center flex-grow-1">
+    <i class="bi ${icon} ${iconColor} fs-4 me-3"></i>
 
-                <
-                div >
-                <
-                h6 class = "mb-0" >
-                $ {
-                    escapeHtml(doc.nombre_original)
-                } <
-                /h6>
+    <div>
+      <h6 class="mb-0">
+        ${escapeHtml(doc.nombre_original)}
+      </h6>
 
-                <
-                small class = "text-muted" >
-                <
-                span class = "badge bg-${getBadgeColor(doc.tipo_documento)}" >
-                $ {
-                    getTipoLabel(doc.tipo_documento)
-                } <
-                /span>·
-            $ {
-                formatearFecha(doc.fecha_subida)
-            } <
-            /small> < /
-            div > <
-                /div>
+      <small class="text-muted">
+        <span class="badge bg-${getBadgeColor(doc.tipo_documento)}">
+          ${getTipoLabel(doc.tipo_documento)}
+        </span>
+        · ${formatearFecha(doc.fecha_subida)}
+      </small>
+    </div>
+  </div>
 
-                <
-                div class = "btn-group" >
-                <
-                button
-            type = "button"
-            onclick = "verDocumento('${doc.ruta_archivo}', '${escapeHtml(doc.nombre_original)}')"
-            class = "btn btn-sm btn-outline-primary"
-            title = "Ver documento" >
-                <
-                i class = "bi bi-eye" > < /i> < /
-            button >
+  <div class="btn-group">
+    <button
+      type="button"
+      onclick="verDocumento('${doc.ruta_archivo}', '${escapeHtml(doc.nombre_original)}')"
+      class="btn btn-sm btn-outline-primary"
+      title="Ver documento">
+      <i class="bi bi-eye"></i>
+    </button>
 
-                <
-                a
-            href = "${BASE_URL}${doc.ruta_archivo}"
-            download
-            class = "btn btn-sm btn-outline-success"
-            title = "Descargar" >
-                <
-                i class = "bi bi-download" > < /i> < /
-            a > <
-                /div>
+    <a
+      href="${BASE_URL}${doc.ruta_archivo}"
+      download
+      class="btn btn-sm btn-outline-success"
+      title="Descargar">
+      <i class="bi bi-download"></i>
+    </a>
+  </div>
 
-                <
-                /div>
-            `;
+</div>
+`;
+
 
 
                 }).join('')}
